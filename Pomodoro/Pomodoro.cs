@@ -15,84 +15,88 @@ namespace Pomodoro
         private bool _IsRodando = false;
         private bool _IsDescanco = false;
 
-        int min = 0;
-        int seg = 0;
+        int min = 24;
+        int seg = 60;
 
         public Pomodoro()
         {
             InitializeComponent();
-            Timer.Interval = 1000;
+            Timer.Interval = 10;
             Timer.Start();
+            LblTempo.Text = "25:00";
+            BtnPomodoro.FlatAppearance.BorderSize = 1;
         }
 
         private void BtnComecar_Click(object sender, EventArgs e)
         {
-            if (BtnComecar.Text != "Começar")
-            {
-                BtnComecar.Text = "Começar";
-            }
-            Timer.Start();
-            _IsDescanco = false;
-            PnlCorpo.BackColor = _Verde;
-            _IsRodando = true;
-        }
-        private void BtnFinalizar_Click(object sender, EventArgs e)
-        {
-            Timer.Start();
-            PnlCorpo.BackColor = _Vermelho;
-            _IsDescanco = true;
-            LblTempo.Text = "00:00";
-            min = 0;
-            seg = 0;
-            _IsRodando = true;
-        }
-        private void BtnResetar_Click(object sender, EventArgs e)
-        {
-            Timer.Start();
-            LblTempo.Text = "00:00";
-            min = 0;
-            seg = 0;
-            _IsRodando = true;
-        }
-        private void BtnPausar_Click(object sender, EventArgs e)
-        {
-            Timer.Stop();
-            PnlCorpo.BackColor = _Preto;
-            _IsRodando = false;
             if (BtnComecar.Text == "Começar")
             {
-                BtnComecar.Text = "Continuar";
+                BtnComecar.Text = "Parar";
+                Timer.Start();
+                _IsDescanco = false;
+                PnlCorpo.BackColor = _Verde;
+                _IsRodando = true;
+                seg = 60;
+                min = 24;
             }
             else
             {
+                Timer.Stop();
+                _IsDescanco = false;
+                PnlCorpo.BackColor = _Preto;
+                _IsRodando = false;
                 BtnComecar.Text = "Começar";
             }
         }
+
+        //private void BtnFinalizar_Click(object sender, EventArgs e)
+        //{
+        //    Timer.Start();
+        //    PnlCorpo.BackColor = _Vermelho;
+        //    _IsDescanco = true;
+        //    LblTempo.Text = "00:00";
+        //    min = 0;
+        //    seg = 0;
+        //    _IsRodando = true;
+        //}
+        //private void BtnResetar_Click(object sender, EventArgs e)
+        //{
+        //    Timer.Start();
+        //    LblTempo.Text = "00:00";
+        //    min = 0;
+        //    seg = 0;
+        //    _IsRodando = true;
+        //}
+        //private void BtnPausar_Click(object sender, EventArgs e)
+        //{
+        //    Timer.Stop();
+        //    PnlCorpo.BackColor = _Preto;
+        //    _IsRodando = false;
+        //    if (BtnComecar.Text == "Começar")
+        //    {
+        //        BtnComecar.Text = "Continuar";
+        //    }
+        //    else
+        //    {
+        //        BtnComecar.Text = "Começar";
+        //    }
+        //}
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (_IsRodando)
             {
-                seg += 1;
-                if (seg == 60)
+                seg -= 1;
+                if (seg == 0)
                 {
-                    seg = 0;
-                    min += 1;
+                    seg = 60;
+                    min -= 1;
                 }
 
-                if (_IsDescanco)
+                if (min == 0)
                 {
-                    if (min == 1)
-                    {
-                        BtnComecar.PerformClick();
-                    }
-                }
-                else
-                {
-                    if (min == 1)
-                    {
-                        BtnFinalizar.PerformClick();
-                    }
+                    BtnComecar.PerformClick();
+                    seg = 0;
                 }
 
                 ssxBuiderTempo = new();
@@ -104,7 +108,7 @@ namespace Pomodoro
             }
             else
             {
-                LblTempo.Text = "00:00";
+                LblTempo.Text = "25:00";
             }
         }
 
@@ -116,12 +120,32 @@ namespace Pomodoro
             }
             else if (e.Control && e.KeyCode == Keys.F)
             {
-                BtnFinalizar.PerformClick();
+                //BtnFinalizar.PerformClick();
             }
             else if (e.Control && e.KeyCode == Keys.R)
             {
-                BtnResetar.PerformClick();
+                //BtnResetar.PerformClick();
             }
+        }
+
+        private void BtnPomodoro_Click(object sender, EventArgs e)
+        {
+            BtnPomodoro.FlatAppearance.BorderSize = 1;
+            BtnShortBreak.FlatAppearance.BorderSize = 0;
+            BtnLongBreak.FlatAppearance.BorderSize = 0;
+
+        }
+        private void BtnShortBreak_Click(object sender, EventArgs e)
+        {
+            BtnPomodoro.FlatAppearance.BorderSize = 0;
+            BtnShortBreak.FlatAppearance.BorderSize = 1;
+            BtnLongBreak.FlatAppearance.BorderSize = 0;
+        }
+        private void BtnLongBreak_Click(object sender, EventArgs e)
+        {
+            BtnPomodoro.FlatAppearance.BorderSize = 0;
+            BtnShortBreak.FlatAppearance.BorderSize = 0;
+            BtnLongBreak.FlatAppearance.BorderSize = 1;
         }
     }
 }

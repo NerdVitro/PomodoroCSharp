@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositórios GitHub\\Pomodoro\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
+      "projectUniqueName": "D:\\Repositórios GitHub\\PomodoroCSharp\\Pomodoro\\Pomodoro.csproj",
       "projectName": "Pomodoro",
-      "projectPath": "D:\\Repositórios GitHub\\Pomodoro\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
+      "projectPath": "D:\\Repositórios GitHub\\PomodoroCSharp\\Pomodoro\\Pomodoro.csproj",
       "packagesPath": "C:\\Users\\Vitor Souza\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositórios GitHub\\Pomodoro\\Pomodoro\\Pomodoro\\obj\\",
+      "outputPath": "D:\\Repositórios GitHub\\PomodoroCSharp\\Pomodoro\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

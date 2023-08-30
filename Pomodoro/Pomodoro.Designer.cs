@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             PnlCorpo = new Panel();
-            BtnPausar = new Button();
+            BtnLongBreak = new Button();
+            BtnShortBreak = new Button();
+            BtnPomodoro = new Button();
             LblTempo = new Label();
-            BtnResetar = new Button();
-            BtnFinalizar = new Button();
             BtnComecar = new Button();
             Timer = new System.Windows.Forms.Timer(components);
             PnlCorpo.SuspendLayout();
@@ -41,10 +41,10 @@
             // 
             // PnlCorpo
             // 
-            PnlCorpo.Controls.Add(BtnPausar);
+            PnlCorpo.Controls.Add(BtnLongBreak);
+            PnlCorpo.Controls.Add(BtnShortBreak);
+            PnlCorpo.Controls.Add(BtnPomodoro);
             PnlCorpo.Controls.Add(LblTempo);
-            PnlCorpo.Controls.Add(BtnResetar);
-            PnlCorpo.Controls.Add(BtnFinalizar);
             PnlCorpo.Controls.Add(BtnComecar);
             PnlCorpo.Dock = DockStyle.Fill;
             PnlCorpo.Location = new Point(0, 0);
@@ -52,62 +52,71 @@
             PnlCorpo.Size = new Size(784, 461);
             PnlCorpo.TabIndex = 0;
             // 
-            // BtnPausar
+            // BtnLongBreak
             // 
-            BtnPausar.FlatStyle = FlatStyle.Flat;
-            BtnPausar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnPausar.ForeColor = Color.White;
-            BtnPausar.Location = new Point(455, 269);
-            BtnPausar.Name = "BtnPausar";
-            BtnPausar.Size = new Size(120, 42);
-            BtnPausar.TabIndex = 101;
-            BtnPausar.Text = "Pausar";
-            BtnPausar.UseVisualStyleBackColor = true;
-            BtnPausar.Click += BtnPausar_Click;
+            BtnLongBreak.FlatAppearance.BorderSize = 0;
+            BtnLongBreak.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BtnLongBreak.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BtnLongBreak.FlatStyle = FlatStyle.Flat;
+            BtnLongBreak.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnLongBreak.ForeColor = Color.White;
+            BtnLongBreak.Location = new Point(446, 80);
+            BtnLongBreak.Name = "BtnLongBreak";
+            BtnLongBreak.Size = new Size(120, 42);
+            BtnLongBreak.TabIndex = 104;
+            BtnLongBreak.Text = "Long Break";
+            BtnLongBreak.UseVisualStyleBackColor = true;
+            BtnLongBreak.Click += BtnLongBreak_Click;
+            // 
+            // BtnShortBreak
+            // 
+            BtnShortBreak.FlatAppearance.BorderSize = 0;
+            BtnShortBreak.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BtnShortBreak.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BtnShortBreak.FlatStyle = FlatStyle.Flat;
+            BtnShortBreak.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnShortBreak.ForeColor = Color.White;
+            BtnShortBreak.Location = new Point(320, 80);
+            BtnShortBreak.Name = "BtnShortBreak";
+            BtnShortBreak.Size = new Size(120, 42);
+            BtnShortBreak.TabIndex = 103;
+            BtnShortBreak.Text = "Short Break";
+            BtnShortBreak.UseVisualStyleBackColor = true;
+            BtnShortBreak.Click += BtnShortBreak_Click;
+            // 
+            // BtnPomodoro
+            // 
+            BtnPomodoro.FlatAppearance.BorderSize = 0;
+            BtnPomodoro.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BtnPomodoro.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BtnPomodoro.FlatStyle = FlatStyle.Flat;
+            BtnPomodoro.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnPomodoro.ForeColor = Color.White;
+            BtnPomodoro.Location = new Point(194, 80);
+            BtnPomodoro.Name = "BtnPomodoro";
+            BtnPomodoro.Size = new Size(120, 42);
+            BtnPomodoro.TabIndex = 102;
+            BtnPomodoro.Text = "Pomodoro";
+            BtnPomodoro.UseVisualStyleBackColor = true;
+            BtnPomodoro.Click += BtnPomodoro_Click;
             // 
             // LblTempo
             // 
             LblTempo.Font = new Font("Tahoma", 48F, FontStyle.Bold, GraphicsUnit.Point);
             LblTempo.ForeColor = Color.White;
-            LblTempo.Location = new Point(194, 125);
+            LblTempo.Location = new Point(194, 159);
             LblTempo.Name = "LblTempo";
-            LblTempo.Size = new Size(255, 186);
+            LblTempo.Size = new Size(372, 100);
             LblTempo.TabIndex = 100;
             LblTempo.Text = "00:00";
             LblTempo.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // BtnResetar
-            // 
-            BtnResetar.FlatStyle = FlatStyle.Flat;
-            BtnResetar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnResetar.ForeColor = Color.White;
-            BtnResetar.Location = new Point(455, 221);
-            BtnResetar.Name = "BtnResetar";
-            BtnResetar.Size = new Size(120, 42);
-            BtnResetar.TabIndex = 3;
-            BtnResetar.Text = "Resetar";
-            BtnResetar.UseVisualStyleBackColor = true;
-            BtnResetar.Click += BtnResetar_Click;
-            // 
-            // BtnFinalizar
-            // 
-            BtnFinalizar.FlatStyle = FlatStyle.Flat;
-            BtnFinalizar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnFinalizar.ForeColor = Color.White;
-            BtnFinalizar.Location = new Point(455, 173);
-            BtnFinalizar.Name = "BtnFinalizar";
-            BtnFinalizar.Size = new Size(120, 42);
-            BtnFinalizar.TabIndex = 2;
-            BtnFinalizar.Text = "Finalizar";
-            BtnFinalizar.UseVisualStyleBackColor = true;
-            BtnFinalizar.Click += BtnFinalizar_Click;
             // 
             // BtnComecar
             // 
             BtnComecar.FlatStyle = FlatStyle.Flat;
             BtnComecar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BtnComecar.ForeColor = Color.White;
-            BtnComecar.Location = new Point(455, 125);
+            BtnComecar.Location = new Point(320, 302);
             BtnComecar.Name = "BtnComecar";
             BtnComecar.Size = new Size(120, 42);
             BtnComecar.TabIndex = 1;
@@ -141,11 +150,11 @@
         #endregion
 
         private Panel PnlCorpo;
-        private Button BtnResetar;
-        private Button BtnFinalizar;
         private Button BtnComecar;
         private Label LblTempo;
         private System.Windows.Forms.Timer Timer;
-        private Button BtnPausar;
+        private Button BtnLongBreak;
+        private Button BtnShortBreak;
+        private Button BtnPomodoro;
     }
 }

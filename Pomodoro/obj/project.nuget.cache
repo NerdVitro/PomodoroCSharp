@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CH8iCjuS1/R9alPKd7VJM0xckMSiomUHTE0MkZBGdSbe7SrWrHCKd+3fYENY4dWwWni5yGSQsfPAPOZ8tkcYZg==",
+  "dgSpecHash": "eccBHcfM5jsjwSYGtRk0Gq82UtJwqTi378R7Z7FacY2zseIRDgcF01b3YZJ/bi1MhThv3CTS+uV/fLbqT5MZKA==",
   "success": true,
-  "projectFilePath": "D:\\Repositórios GitHub\\Pomodoro\\Pomodoro\\Pomodoro\\Pomodoro.csproj",
+  "projectFilePath": "D:\\Repositórios GitHub\\PomodoroCSharp\\Pomodoro\\Pomodoro.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
